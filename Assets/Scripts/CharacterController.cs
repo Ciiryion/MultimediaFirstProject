@@ -33,8 +33,5 @@ public class CharacterController : MonoBehaviour
         Vector3 frameMovement3D = new Vector3(frameMovement.x, 0, frameMovement.y);
         Vector3 newPos = transform.position + frameMovement3D * speed * Time.deltaTime;
         transform.position = newPos;
-
-        //Vector3 direction = newPos - transform.position;
-        //Quaternion playerOrientation = Quaternion.LookRotation(direction, Vector3.up);
     }
 }
