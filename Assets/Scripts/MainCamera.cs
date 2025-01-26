@@ -5,7 +5,9 @@ public class MainCamera : MonoBehaviour
     [SerializeField]
     private Transform player;
 
-    public float smooth = 0.125f;
+    [SerializeField]
+    private float smooth = 0.125f;
+
     private Vector3 velocity = Vector3.zero;
     
 

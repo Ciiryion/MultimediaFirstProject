@@ -1451,6 +1451,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 339018688279215132, guid: 75a27ca55c42ccb4d95952f1929d550d, type: 3}
     - target: {fileID: 5443668439771634607, guid: a4957597c0a0e424fbae6353da16b0f9, type: 3}
+      propertyPath: boostSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443668439771634607, guid: a4957597c0a0e424fbae6353da16b0f9, type: 3}
       propertyPath: bulletCooldown
       value: 1
       objectReference: {fileID: 0}

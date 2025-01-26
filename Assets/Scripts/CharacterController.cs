@@ -33,7 +33,7 @@ public class CharacterController : MonoBehaviour
         initialSpeed = speed;
         moveActionReference.action.Enable();
         boostActionReference.action.Enable();
-        InvokeRepeating("shoot", 0.0f, bulletCooldown);
+        InvokeRepeating(nameof(shoot), bulletCooldown, bulletCooldown);
     }
 
     // Update is called once per frame
