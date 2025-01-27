@@ -208,8 +208,11 @@ MonoBehaviour:
   moveActionReference: {fileID: -8717764020223579470, guid: ccbd5e77cc57f1b4db1c321ad946cb6c, type: 3}
   boostActionReference: {fileID: -3820546337983822323, guid: ccbd5e77cc57f1b4db1c321ad946cb6c, type: 3}
   speed: 4
+  boostSpeed: 5
   bullet: {fileID: 0}
   bulletStartPos: {fileID: 0}
+  bulletCooldown: 2
+  playerAnimator: {fileID: 0}
 --- !u!54 &7933707969541895467
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -590,7 +593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4281324252227193181, guid: 4d85a1cad0f4a6542bd70cf6820253f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.076117724
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4281324252227193181, guid: 4d85a1cad0f4a6542bd70cf6820253f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -598,7 +601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4281324252227193181, guid: 4d85a1cad0f4a6542bd70cf6820253f8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2740274
+      value: 0.274
       objectReference: {fileID: 0}
     - target: {fileID: 4281324252227193181, guid: 4d85a1cad0f4a6542bd70cf6820253f8, type: 3}
       propertyPath: m_LocalRotation.w
