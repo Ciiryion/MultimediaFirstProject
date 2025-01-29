@@ -3,17 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject deathPanel;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject inGamePanel;
 
     public void changeScene(string sceneName)
     {
@@ -23,5 +17,11 @@ public class MenuController : MonoBehaviour
     public void exitGame()
     {
         Application.Quit();
+    }
+
+    public void showDeathPanel()
+    {
+        inGamePanel.SetActive(false);
+        deathPanel.SetActive(true);
     }
 }

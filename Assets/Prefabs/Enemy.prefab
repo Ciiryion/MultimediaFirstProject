@@ -166,6 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12155fa961967bf4faa4c4b1b1baaa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+  exp: {fileID: 4568124124956174009, guid: 750dc612170bca74192cc0d920016f7e, type: 3}
+  expProba: 100
 --- !u!136 &3640521015807182470
 CapsuleCollider:
   m_ObjectHideFlags: 0

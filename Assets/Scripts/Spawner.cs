@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("spawnMob", 0f, time);
+        InvokeRepeating(nameof(spawnMob), 0f, time);
     }
 
     // Update is called once per frame
