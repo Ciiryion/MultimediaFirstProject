@@ -1,5 +1,6 @@
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,9 @@ public class ExpManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI lvlText;
 
+    [SerializeField]
+    private GameObject enemyPrefab;
+
     public void GainExp(int amountExp)
     {
         exp += amountExp;
@@ -27,8 +31,22 @@ public class ExpManager : MonoBehaviour
         {
             exp = 0;
             currentLevel++;
-            lvlText.text = "Level : " + currentLevel.ToString();
+            buffPlayer();
+            if(currentLevel > levels.Length)
+                lvlText.text = "Level : Max";
+            else
+                lvlText.text = "Level : " + currentLevel.ToString();
         }
         expBar.fillAmount = (float)exp / (float)levels[currentLevel - 1];
+
+        if(currentLevel > levels.Length && exp % 30 == 0)
+        {
+            enemyPrefab.GetComponent<EnemyController>().getBuff();
+        }
+    }
+
+    private void buffPlayer()
+    {
+        gameObject.GetComponent<CharacterController>().setCooldown(0.75f);
     }
 }

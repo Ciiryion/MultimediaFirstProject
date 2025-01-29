@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 857699793154513553, guid: 1ceb0a7ed859ba641a11876d9da4b0d2, type: 3}
   zone: 5
+  time: 2
+  maxEnnemiesNumber: 50

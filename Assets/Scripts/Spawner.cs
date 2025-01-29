@@ -12,6 +12,9 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private float time = 2.0f;
 
+    [SerializeField]
+    private int maxEnnemiesNumber = 50;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +35,8 @@ public class Spawner : MonoBehaviour
 
     private void spawnMob()
     {
+        if(GameObject.FindGameObjectsWithTag("Ennemy").Length >= maxEnnemiesNumber)
+            return;
         float x, z;
         x = transform.position.x + Random.Range(-zone, zone);
         z = transform.position.z + Random.Range(-zone, zone);

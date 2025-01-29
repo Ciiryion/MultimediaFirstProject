@@ -24,6 +24,7 @@ public class CharacterController : MonoBehaviour
     private Transform bulletStartPos;
 
     [SerializeField]
+    [Range(0f,10f)]
     private float bulletCooldown = 2.0f;
 
     [SerializeField]
@@ -87,14 +88,14 @@ public class CharacterController : MonoBehaviour
         while (true)
         {
             shoot();
-            Debug.Log(nameof(WaitShoot));
+            //Debug.Log(nameof(WaitShoot));
             yield return new WaitForSeconds(bulletCooldown);
         }
     }
 
     private void shoot()
     {
-        Debug.Log("Shoot Method");
+        //Debug.Log("Shoot Method");
         // Start the animation, the animation has an event that create the bullet
         playerAnimator.SetInteger(ATTACKTYPE, 1);
         playerAnimator.SetBool(ISATTACK, true);
@@ -103,5 +104,10 @@ public class CharacterController : MonoBehaviour
     public void createBullet()
     {
         Instantiate(bullet, bulletStartPos.position, bulletStartPos.rotation);
+    }
+
+    public void setCooldown(float time)
+    {
+        bulletCooldown -= time;
     }
 }

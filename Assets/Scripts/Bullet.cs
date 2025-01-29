@@ -26,11 +26,12 @@ public class Bullet : MonoBehaviour
         {
             try
             {
+                //Debug.Log($"Bullet Touch : {collision.name}");
                 collision.gameObject.GetComponent<EnemyController>().death();
             }
             catch
             {
-                Debug.Log("Not touching an enemy");
+                //Debug.Log($"Not touching an enemy{collision.name}");
             }
             Destroy(gameObject);
         }

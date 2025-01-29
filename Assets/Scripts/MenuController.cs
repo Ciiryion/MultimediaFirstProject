@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,10 +8,25 @@ public class MenuController : MonoBehaviour
     private GameObject deathPanel;
 
     [SerializeField]
-    private GameObject inGamePanel;
+    private GameObject mainMenuPanel;
+
+    private void Start()
+    {
+        if (GameManager.instance.isDead)
+        {
+            showDeathPanel();
+        }
+            
+        GameManager.instance.onDeath += showDeathPanel;
+    }
+
+    private void Update()
+    {
+    }
 
     public void changeScene(string sceneName)
     {
+        GameManager.instance.isDead = false;
         SceneManager.LoadScene(sceneName);
     }
 
@@ -21,7 +37,21 @@ public class MenuController : MonoBehaviour
 
     public void showDeathPanel()
     {
-        inGamePanel.SetActive(false);
-        deathPanel.SetActive(true);
+        Debug.Log("showDeathPanel()" + gameObject.name);
+        if (mainMenuPanel != null)
+        {
+            mainMenuPanel.SetActive(false);
+        }
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(true);
+            deathPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Score : " + GameManager.instance.score;
+        }
+
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.onDeath -= showDeathPanel;
     }
 }

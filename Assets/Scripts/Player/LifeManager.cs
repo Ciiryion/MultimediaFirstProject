@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ public class LifeManager : MonoBehaviour
     private Image lifeBar;
 
     private int initialLifePoints;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,8 +40,8 @@ public class LifeManager : MonoBehaviour
 
     private void death()
     {
-        Debug.Log(nameof(death));
+        //Debug.Log(nameof(death));
+        GameManager.instance.death();
         // TODO : Ajouter un son quand le joueur meurt
-        canvasGame.GetComponent<MenuController>().showDeathPanel();
     }
 }

@@ -5,6 +5,14 @@ public class Bonus : MonoBehaviour
     [SerializeField]
     private int exp = 1;
 
+    [SerializeField]
+    private float lifeTime = 30;
+
+    private void Start()
+    {
+        Destroy(gameObject, lifeTime);
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if(collision.tag == "Player")
